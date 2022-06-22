@@ -2,7 +2,6 @@
   font-family: "Didact Gothic", sans-serif;
   --grogu-green: #a4c4a4;
   --logo-black: #000000;
-  --logo-yellow: #ffe81f;
   --mandalorian-red: #c83444;
   --mandalorian-orange: #f7ad90;
   --mandalorian-armor: #62542a;
@@ -213,6 +212,19 @@ body {
 .title {
   text-align: center;
   color: var(--ash-grey);
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+}
+
+/* feedback section style */
+.feedback-form-section {
+  background-color: var(--mandalorian-armor);
+  margin: 2rem 0;
+}
+
+.title {
+  text-align: center;
+  color: var(--grogu-green);
   text-transform: uppercase;
   letter-spacing: 0.4rem;
 }
