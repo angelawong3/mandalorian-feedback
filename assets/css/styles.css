@@ -9,3 +9,71 @@
   --vader-red: #ff0000;
   --vader-purple-grey: #2d2b3c;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  line-height: 2;
+  font-size: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--logo-black);
+}
+
+.header {
+  background-color: var(--vader-purple-grey);
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-link-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link-logo:hover {
+  border-radius: 30px;
+  box-shadow: 0 0 1rem 0.5rem var(--logo-yellow);
+  background-color: var(--logo-yellow);
+}
+
+.logo-img {
+  width: 6.4rem;
+  height: 6.4rem;
+  object-fit: contain;
+}
+
+.nav-link {
+  font-family: "DotGothic16", sans-serif;
+  text-decoration: none;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: var(--vader-red);
+  padding-bottom: 0.5rem;
+}
+
+.nav-link:hover {
+  border-radius: 0.5rem;
+  border-bottom: 0.2rem solid var(--vader-darkgrey);
+  box-shadow: 0 0 1rem 0.5rem var(--logo-yellow);
+  background-color: var(--logo-yellow);
+}
+
+.main {
+  flex: 2;
+}
