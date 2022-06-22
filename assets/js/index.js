@@ -53,7 +53,7 @@ const handleOptionClick = (event) => {
       value: value,
     };
     // store answer in LS
-    console.log(answer);
+    storeAnswerInLS(answer);
 
     // remove current question
     removeQuestion();
@@ -144,6 +144,19 @@ const initialiseLS = () => {
   if (!feedbackResultsFromLS) {
     localStorage.setItem("feedbackResults", JSON.stringify([]));
   }
+};
+
+const storeAnswerInLS = (answer) => {
+  // get feedback results from LS
+  const feedbackResults = JSON.parse(localStorage.getItem("feedbackResults"));
+
+  // push answer into array
+  feedbackResults.push(answer);
+
+  // set feedbackResults in LS
+  localStorage.setItem("feedbackResults", JSON.stringify(feedbackResults));
+
+  // store answer in LS
 };
 
 // declare the event handler function for start butoon click
