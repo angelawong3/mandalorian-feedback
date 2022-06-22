@@ -49,11 +49,11 @@ const handleOptionClick = (event) => {
     const question = questions[questionIndex].question;
     // build an answer object that contains question and answer
     const answer = {
-      question: question,
-      value: value,
+      question,
+      value,
     };
     // store answer in LS
-    storeAnswerInLS(answer);
+    storeInLS("feedbackResults", answer);
 
     // remove current question
     removeQuestion();
@@ -64,20 +64,83 @@ const handleOptionClick = (event) => {
 
       renderQuestion();
     } else {
-      renderResults();
       renderForm();
     }
   }
 };
 
-// function to render results
-const renderResults = () => {
-  console.log("render result");
+// function to handle form submit
+const handleFormSubmit = (event) => {
+  event.preventDefault();
+
+  // get full name from input
+  const useFullName = document.getElementById("full-name").value;
+
+  // validate
+  if (useFullName) {
+    // if valid then store feedbackResults in LS
+    const feedbackResults = JSON.parse(localStorage.getItem("feedbackResults"));
+
+    // build object with useFullName and results
+    const result = {
+      useFullName,
+      feedbackResults,
+    };
+
+    // push the results back to LS
+    storeInLS("allResults", result);
+
+    // clear feedbackResults
+    localStorage.removeItem("feedbackResults");
+
+    // remove form
+    document.getElementById("feedback-form").remove();
+  } else {
+    alert("Please enter your full name!");
+  }
 };
 
 // function to render form
 const renderForm = () => {
-  console.log("render form");
+  const section = document.createElement("section");
+  section.setAttribute("class", "feedback-form-section");
+  section.setAttribute("id", "feedback-form");
+
+  const h2 = document.createElement("h2");
+  h2.setAttribute("class", "title");
+  h2.textContent = "Submit your feedback";
+
+  const form = document.createElement("form");
+
+  const inputDiv = document.createElement("div");
+  inputDiv.setAttribute("class", "form-control");
+
+  const input = document.createElement("input");
+  input.setAttribute("id", "full-name");
+  input.setAttribute("class", "form-input");
+  input.setAttribute("type", "text");
+  input.setAttribute("placeholder", "Enter your name");
+
+  inputDiv.append(input);
+
+  const buttonDiv = document.createElement("div");
+  buttonDiv.setAttribute("class", "form-control");
+
+  const button = document.createElement("button");
+  button.setAttribute("type", "submit");
+  button.setAttribute("class", "btn");
+  button.textContent = "Submit";
+
+  buttonDiv.append(button);
+
+  form.append(inputDiv, buttonDiv);
+
+  section.append(h2, form);
+
+  mainSection.append(section);
+
+  // add event listener for form submission
+  form.addEventListener("submit", handleFormSubmit);
 };
 
 // function to render question
@@ -141,22 +204,28 @@ const initialiseLS = () => {
   const feedbackResultsFromLS = JSON.parse(
     localStorage.getItem("feedbackResults")
   );
+
+  // get all result from LS
+  const allResultsFromLS = JSON.parse(localStorage.getItem("allResults"));
+
   if (!feedbackResultsFromLS) {
     localStorage.setItem("feedbackResults", JSON.stringify([]));
   }
+
+  if (!allResultsFromLS) {
+    localStorage.setItem("allResults", JSON.stringify([]));
+  }
 };
 
-const storeAnswerInLS = (answer) => {
+const storeInLS = (key, value) => {
   // get feedback results from LS
-  const feedbackResults = JSON.parse(localStorage.getItem("feedbackResults"));
+  const arrayFromLS = JSON.parse(localStorage.getItem(key));
 
   // push answer into array
-  feedbackResults.push(answer);
+  arrayFromLS.push(value);
 
   // set feedbackResults in LS
-  localStorage.setItem("feedbackResults", JSON.stringify(feedbackResults));
-
-  // store answer in LS
+  localStorage.setItem(key, JSON.stringify(arrayFromLS));
 };
 
 // declare the event handler function for start butoon click
