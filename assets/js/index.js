@@ -136,8 +136,21 @@ const removeQuestion = () => {
   document.getElementById("question-container").remove();
 };
 
+const initialiseLS = () => {
+  // get feedback result from LS
+  const feedbackResultsFromLS = JSON.parse(
+    localStorage.getItem("feedbackResults")
+  );
+  if (!feedbackResultsFromLS) {
+    localStorage.setItem("feedbackResults", JSON.stringify([]));
+  }
+};
+
 // declare the event handler function for start butoon click
 const handleStartButtonClick = () => {
+  // init LS
+  initialiseLS();
+
   // remove banner section
   removeBanner();
 
