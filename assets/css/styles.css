@@ -8,6 +8,7 @@
   --mandalorian-armor: #62542a;
   --mandalorian-brown: #ae7652;
   --mandalorian-darkbrown: #573d2b;
+  --ash-grey-rgb: 226, 226, 226;
 }
 
 * {
@@ -76,11 +77,6 @@ body {
   color: var(--mandalorian-red);
 }
 
-/* main style */
-.main {
-  flex: 2;
-}
-
 /* footer */
 .footer {
   background-color: var(--mandalorian-darkbrown);
@@ -111,4 +107,56 @@ body {
   box-shadow: 0 0 1rem 0.5rem var(--grogu-green);
   background-color: var(--grogu-green);
   color: var(--mandalorian-red);
+}
+
+/* main section style */
+.main {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 2rem;
+}
+
+/* content section styles */
+.content-section {
+  letter-spacing: 0.6rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  position: relative;
+  color: var(--logo-black);
+  box-shadow: 0rem 0rem 0.7rem 0.7rem rgba(var(--ash-grey-rgb), 0.3);
+}
+
+.content-section-title {
+  font-size: 4rem;
+}
+
+.content-section-info {
+  font-size: 2rem;
+}
+
+/* button styles */
+.btn-control {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.btn {
+  padding: 1.5rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.4rem;
+  min-width: 16rem;
+  text-transform: uppercase;
+  color: var(--mandalorian-red);
+  background-color: var(--mandalorian-orange);
+}
+
+.btn:hover {
+  cursor: pointer;
+  background-color: var(--mandalorian-red);
+  color: var(--mandalorian-orange);
+  box-shadow: 0.5rem 0.5rem 0.7rem rgba(var(--ash-grey-rgb), 0.3);
 }
