@@ -1,0 +1,11 @@
+:root {
+  font-family: "Didact Gothic", sans-serif;
+  --logo-black: #000000;
+  --black-rgb: 20, 20, 20;
+  --logo-yellow: #ffe81f;
+  --vader-darkgrey: #242424;
+  --vader-grey: #dfdfdf;
+  --lightsaber-red: #6b0f15;
+  --vader-red: #ff0000;
+  --vader-purple-grey: #2d2b3c;
+}
