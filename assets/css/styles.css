@@ -28,6 +28,7 @@ body {
   background-color: var(--logo-black);
 }
 
+/* header style */
 .header {
   background-color: var(--vader-purple-grey);
 }
@@ -74,6 +75,7 @@ body {
   background-color: var(--logo-yellow);
 }
 
+/* main style */
 .main {
   flex: 2;
 }
