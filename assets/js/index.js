@@ -11,7 +11,7 @@ const renderQuestion = () => {
 
 // function to remove banner
 const removeBanner = () => {
-  console.log("remove b");
+  bannerSection.remove();
 };
 
 // declare the event handler function for start butoon click
