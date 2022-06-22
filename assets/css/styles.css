@@ -1,13 +1,13 @@
 :root {
   font-family: "Didact Gothic", sans-serif;
+  --grogu-green: #a4c4a4;
   --logo-black: #000000;
-  --black-rgb: 20, 20, 20;
   --logo-yellow: #ffe81f;
-  --vader-darkgrey: #242424;
-  --vader-grey: #dfdfdf;
-  --lightsaber-red: #6b0f15;
-  --vader-red: #ff0000;
-  --vader-purple-grey: #2d2b3c;
+  --mandalorian-red: #c83444;
+  --mandalorian-orange: #f7ad90;
+  --mandalorian-armor: #62542a;
+  --mandalorian-brown: #ae7652;
+  --mandalorian-darkbrown: #573d2b;
 }
 
 * {
@@ -25,12 +25,12 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--logo-black);
+  background-color: var(--mandalorian-brown);
 }
 
 /* header style */
 .header {
-  background-color: var(--vader-purple-grey);
+  background-color: var(--mandalorian-darkbrown);
 }
 
 .nav-container {
@@ -49,8 +49,8 @@ body {
 
 .nav-link-logo:hover {
   border-radius: 30px;
-  box-shadow: 0 0 1rem 0.5rem var(--logo-yellow);
-  background-color: var(--logo-yellow);
+  box-shadow: 0 0 1rem 0.5rem var(--grogu-green);
+  background-color: var(--grogu-green);
 }
 
 .logo-img {
@@ -64,18 +64,51 @@ body {
   text-decoration: none;
   font-size: 1.6rem;
   text-transform: uppercase;
-  color: var(--vader-red);
+  color: var(--mandalorian-orange);
   padding-bottom: 0.5rem;
 }
 
 .nav-link:hover {
   border-radius: 0.5rem;
-  border-bottom: 0.2rem solid var(--vader-darkgrey);
-  box-shadow: 0 0 1rem 0.5rem var(--logo-yellow);
-  background-color: var(--logo-yellow);
+  border-bottom: 0.2rem solid var(--mandalorian-darkbrown);
+  box-shadow: 0 0 1rem 0.5rem var(--grogu-green);
+  background-color: var(--grogu-green);
+  color: var(--mandalorian-red);
 }
 
 /* main style */
 .main {
   flex: 2;
+}
+
+/* footer */
+.footer {
+  background-color: var(--mandalorian-darkbrown);
+  font-size: 1.6rem;
+  padding: 2rem 0rem;
+  text-align: center;
+  color: var(--mandalorian-orange);
+  letter-spacing: 0.3rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: var(--mandalorian-orange);
+  margin: 0.5rem 0;
+}
+
+.contact-link:hover {
+  border-radius: 0.5rem;
+  border-bottom: 0.2rem solid var(--mandalorian-darkbrown);
+  box-shadow: 0 0 1rem 0.5rem var(--grogu-green);
+  background-color: var(--grogu-green);
+  color: var(--mandalorian-red);
 }
