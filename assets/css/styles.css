@@ -249,6 +249,22 @@ body {
   letter-spacing: 0.4rem;
 }
 
+.userFullName {
+  box-shadow: 0rem 0rem 0.7rem 0.7rem rgba(var(--ash-grey-rgb), 0.3);
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+}
+
+.questionAndAnswer {
+  font-family: "DotGothic16", sans-serif;
+  padding: 1rem 0;
+  font-size: 1.8rem;
+}
+
 @media screen and (max-width: 768px) {
   .main {
     margin: 0 1rem;
