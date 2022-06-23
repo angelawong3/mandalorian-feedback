@@ -1,6 +1,6 @@
 # Mandalorian Feedback
 
-## This is the repository for the code quiz
+## This is the repository for the Mandalorian feedback
 
 ### Overview
 
@@ -13,6 +13,10 @@ Questionnaire on the new Mandalorian series
 3. JavaScript
 4. Google Fonts
 5. Animate.css
+
+### UI:
+
+![UI](./assets/img/feedback-UI.png)
 
 ### Link:
 
