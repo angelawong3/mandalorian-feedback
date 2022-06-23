@@ -55,8 +55,6 @@ if (allResults !== null) {
     createUl.append(li1, li2, li3, li4, li5);
 
     mainSection.appendChild(createUl);
-
-    console.log(li1.textContent);
   }
 }
 
