@@ -74,16 +74,16 @@ const handleFormSubmit = (event) => {
   event.preventDefault();
 
   // get full name from input
-  const useFullName = document.getElementById("full-name").value;
+  const userFullName = document.getElementById("full-name").value;
 
   // validate
-  if (useFullName) {
+  if (userFullName) {
     // if valid then store feedbackResults in LS
     const feedbackResults = JSON.parse(localStorage.getItem("feedbackResults"));
 
-    // build object with useFullName and results
+    // build object with userFullName and results
     const result = {
-      useFullName,
+      userFullName,
       feedbackResults,
     };
 
@@ -95,6 +95,9 @@ const handleFormSubmit = (event) => {
 
     // remove form
     document.getElementById("feedback-form").remove();
+
+    //go to response page after submitting form
+    window.location.replace("./responses.html");
   } else {
     alert("Please enter your full name!");
   }
